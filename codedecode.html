@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/
+css2?family=Audiowide&family=Pacifico&family=
+Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- <link rel="style/sheet" href="codedecode.css"> -->
+    <!-- <link rel="shortcut icon" type="image/jpg" href="encryptfavicon.jpg" /> -->
+    <!-- This is CSS for this file -->
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(148, 236, 236), rgba(95, 152, 167, 0.918));
+            text-align: center;
+        }
+        
+        #coderanddecoder {
+            display: flex;
+        }
+        
+        #coder-result,
+        #decoder-result {
+            border: 2px solid;
+            font-size: 20px;
+            padding: 5px;
+            background-color: beige;
+            margin: 10px;
+            /* font-family: 'Shadows Into Light', cursive; */
+            font-family: 'Indie Flower', cursive;
+            /* background-image: url(code\ background.jpg); */
+        }
+        
+        #coder-result {
+            font-family: 'Audiowide', cursive;
+        }
+        
+        #coder-input,
+        #decoder-input {
+            font-size: 20px;
+            margin: 10px;
+        }
+        
+        #coder-button,
+        #decoder-button {
+            flex-direction: row;
+            flex-wrap: inherit;
+            justify-content: space-between;
+            height: 40px;
+            width: 60px;
+            background-color: beige;
+            border: 0px;
+            margin: 10px;
+        }
+        
+        #decoder,
+        #coder {
+            border: 1.5px solid;
+            position: relative;
+            width: 320px;
+            margin: 20px auto;
+        }
+        
+        #heading {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Merriweather', serif;
+            color: white;
+            outline: black;
+        }
+    </style>
+    <title>Code&Decode</title>
+</head>
+
+<body>
+    <p id="heading">Make your words your secret!</p>
+    <div id="coderanddecoder">
+        <div id="coder">
+            <input type="text" id="coder-input" class="coder" value="">
+            <br>
+            <button class="coder" id="coder-button">Code It!</button>
+            <div class="coder" id="coder-ouput">
+                <p id="coder-result">
+                </p>
+            </div>
+        </div>
+
+        <div id="decoder">
+            <input type="text" id="decoder-input" class="decoder" value="">
+            <button class="decoder" id="decoder-button">Decode It! </button>
+            <div class="decoder" id="decoder-output">
+                <p id="decoder-result"> </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- this is coder part javascript -->
+    <script>
+        // Coder script
+        const getCodeInput = () => {
+            let output = document.querySelector('#coder-input').value;
+            let code = []
+            for (let i = 0; i < output.length; i++) {
+                if (output[i] === 'a' || output[i] === 'A') {
+                    code.splice(i, 0, "@")
+                }
+                if (output[i] === 'b' || output[i] === 'B') {
+                    code.splice(i, 0, "%")
+                }
+                if (output[i] === 'c' || output[i] === 'C') {
+                    code.splice(i, 0, "1")
+                }
+                if (output[i] === 'd' || output[i] === 'D') {
+                    code.splice(i, 0, "9")
+                }
+                if (output[i] === 'e' || output[i] === 'E') {
+                    code.splice(i, 0, "f")
+                }
+                if (output[i] === 'f' || output[i] === 'F') {
+                    code.splice(i, 0, "Q")
+                }
+                if (output[i] === 'g' || output[i] === 'G') {
+                    code.splice(i, 0, "^")
+                }
+                if (output[i] === 'h' || output[i] === 'H') {
+                    code.splice(i, 0, "x")
+                }
+                if (output[i] === 'i' || output[i] === 'I') {
+                    code.splice(i, 0, "6")
+                }
+                if (output[i] === 'j' || output[i] === 'J') {
+                    code.splice(i, 0, "B")
+                }
+                if (output[i] === 'k' || output[i] === 'K') {
+                    code.splice(i, 0, "z")
+                }
+                if (output[i] === 'l' || output[i] === 'L') {
+                    code.splice(i, 0, "*")
+                }
+                if (output[i] === 'm' || output[i] === 'M') {
+                    code.splice(i, 0, "T")
+                }
+                if (output[i] === 'n' || output[i] === 'N') {
+                    code.splice(i, 0, "5")
+                }
+                if (output[i] === 'o' || output[i] === 'O') {
+                    code.splice(i, 0, "!")
+                }
+                if (output[i] === 'p' || output[i] === 'P') {
+                    code.splice(i, 0, "l")
+                }
+                if (output[i] === 'q' || output[i] === 'Q') {
+                    code.splice(i, 0, "S")
+                }
+                if (output[i] === 'r' || output[i] === 'R') {
+                    code.splice(i, 0, "&")
+                }
+                if (output[i] === 's' || output[i] === 'S') {
+                    code.splice(i, 0, "E")
+                }
+                if (output[i] === 't' || output[i] === 'T') {
+                    code.splice(i, 0, "y")
+                }
+                if (output[i] === 'u' || output[i] === 'U') {
+                    code.splice(i, 0, "}")
+                }
+                if (output[i] === 'v' || output[i] === 'V') {
+                    code.splice(i, 0, "a")
+                }
+                if (output[i] === 'w' || output[i] === 'W') {
+                    code.splice(i, 0, "G")
+                }
+                if (output[i] === 'X' || output[i] === 'X') {
+                    code.splice(i, 0, "0")
+                }
+                if (output[i] === 'y' || output[i] === 'Y') {
+                    code.splice(i, 0, "<")
+                }
+                if (output[i] === 'z' || output[i] === 'Z') {
+                    code.splice(i, 0, "?")
+                }
+                if (output[i] === ' ') {
+                    code.splice(i, 0, '$')
+                }
+
+            }
+
+            return code.join('-')
+
+        }
+        const printOutput = () => {
+            if (getCodeInput() != '')
+                document.querySelector('#coder-result').innerText = getCodeInput();
+            document.querySelector('#coder-input').value = ""
+        }
+        const codeButton = document.querySelector('#coder-button');
+        codeButton.addEventListener('click', printOutput)
+
+        document.body.addEventListener('keypress', function(key) {
+            var keyvalue = key.keyCode;
+            if (keyvalue == 13 && getCodeInput() != '') {
+
+                document.querySelector('#coder-result').innerText = getCodeInput();
+                document.querySelector('#coder-input').value = "";
+                let uncoded = document.querySelector('#coder-result').innerHTML;
+
+            }
+        })
+    </script>
+    <!-- this is decoder part javascript -->
+    <script>
+        // decoder script
+        const output2 = document.querySelector('#decoder-input');
+        const outputResult = document.querySelector('#decoder-result');
+        const decodeButton = document.querySelector('#decoder-button');
+
+
+        const getDecodeInput = () => {
+            let output = output2.value;
+            let decode = []
+            for (let i = 0; i < output.length; i++) {
+                if (output[i] === '@') {
+                    decode.splice(i, 0, "a")
+                }
+                if (output[i] === '%') {
+                    decode.splice(i, 0, "b")
+                }
+                if (output[i] === '1') {
+                    decode.splice(i, 0, "c")
+                }
+                if (output[i] === '9') {
+                    decode.splice(i, 0, "d")
+                }
+                if (output[i] === 'f') {
+                    decode.splice(i, 0, "e")
+                }
+                if (output[i] === 'Q') {
+                    decode.splice(i, 0, "f")
+                }
+                if (output[i] === '^') {
+                    decode.splice(i, 0, "g")
+                }
+                if (output[i] === 'x') {
+                    decode.splice(i, 0, "h")
+                }
+                if (output[i] === '6') {
+                    decode.splice(i, 0, "i")
+                }
+                if (output[i] === 'B') {
+                    decode.splice(i, 0, "j")
+                }
+                if (output[i] === 'z') {
+                    decode.splice(i, 0, "k")
+                }
+                if (output[i] === '*') {
+                    decode.splice(i, 0, "l")
+                }
+                if (output[i] === 'T') {
+                    decode.splice(i, 0, "m")
+                }
+                if (output[i] === '5') {
+                    decode.splice(i, 0, "n")
+                }
+                if (output[i] === '!') {
+                    decode.splice(i, 0, "o")
+                }
+                if (output[i] === 'l') {
+                    decode.splice(i, 0, "p")
+                }
+                if (output[i] === 'S') {
+                    decode.splice(i, 0, "q")
+                }
+                if (output[i] === '&') {
+                    decode.splice(i, 0, "r")
+                }
+                if (output[i] === 'E') {
+                    decode.splice(i, 0, "s")
+                }
+                if (output[i] === 'y') {
+                    decode.splice(i, 0, "t")
+                }
+                if (output[i] === '}') {
+                    decode.splice(i, 0, "u")
+                }
+                if (output[i] === 'a') {
+                    decode.splice(i, 0, "v")
+                }
+                if (output[i] === 'G') {
+                    decode.splice(i, 0, "w")
+                }
+                if (output[i] === '0') {
+                    decode.splice(i, 0, "x")
+                }
+                if (output[i] === '<') {
+                    decode.splice(i, 0, "y")
+                }
+                if (output[i] === '?') {
+                    decode.splice(i, 0, "z")
+                }
+                if (output[i] === '$') {
+                    decode.splice(i, 0, '_')
+                }
+
+            }
+            return decode.join(" ")
+        }
+        const printDecodeOutput = () => {
+            outputResult.innerHTML = getDecodeInput();
+            output2.value = '';
+        }
+        decodeButton.addEventListener('click', printDecodeOutput)
+        document.body.addEventListener('keypress', function(key) {
+            let keyvalue = key.keyCode;
+            if (keyvalue == 13) {
+                outputResult.innerHTML = getDecodeInput();
+                output2.value = '';
+            }
+        })
+    </script>
+</body>
+
+</html>

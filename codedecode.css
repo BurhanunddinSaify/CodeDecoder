@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(to right, rgba(228, 41, 41, 0.842), rgb(50, 50, 136));
+    text-align: center;
+}
+
+#coderanddecoder {
+    display: flex;
+}
+
+#coder-result,
+#decoder-result {
+    border: 2px solid;
+    font-size: 20px;
+    padding: 5px;
+    background-color: beige;
+    margin: 10px;
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-family: 'Indie Flower', cursive;
+    background-image: url(code\ background.jpg);
+}
+
+#coder-result {
+    font-family: 'Audiowide', cursive;
+}
+
+#coder-input,
+#decoder-input {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#coder-button,
+#decoder-button {
+    flex-direction: row;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    height: 40px;
+    width: 60px;
+    background-color: beige;
+    border: 0px;
+    margin: 10px;
+}
+
+#decoder,
+#coder {
+    border: 1.5px solid;
+    position: relative;
+    width: 320px;
+    margin: 20px auto;
+}
+
+#heading {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: white;
+    outline: black;
+}
